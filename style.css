@@ -2,41 +2,44 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: #f4fbf9;
-    color: #23413d;
+    background-color: #f5faf4;
+    color: #0A0E27;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
 }
 
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h2 {
+    color: #1A2C6B;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
 .encabezado {
-     background-color: rgba(0, 0, 0, 0.55);
+    background-color: #0A0E27;
     color: white;
+    min-height: 500px;
     overflow: hidden;
     padding: 25px 8% 70px;
     position: relative;
 }
 
-.encabezado::before {
-    background-color: rgba(0, 0, 0, .45);
-    content: "";
-    inset: 0;
-    position: absolute;
-}
-
 .video-fondo {
     height: 100%;
-    inset: 0;
+    left: 0;
     object-fit: cover;
     position: absolute;
+    top: 0;
     width: 100%;
-    z-index: 0;
-    opacity: 0.5;
+    opacity: .5;
 }
 
 .barra-superior,
@@ -47,12 +50,16 @@ body {
     max-width: 1100px;
 }
 
+.barra-superior,
+.presentacion {
+    position: relative;
+    z-index: 1;
+}
+
 .barra-superior {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    position: relative;
-    z-index: 1;
 }
 
 .marca {
@@ -66,14 +73,14 @@ body {
 }
 
 .marca span:last-child span {
-    color: #c8fff1;
+    color: #A8D8A0;
 }
 
 .simbolo {
     align-items: center;
-    background-color: white;
+    background-color: #A8D8A0;
     border-radius: 50%;
-    color: #087f78;
+    color: #1A2C6B;
     display: flex;
     font-size: 1.4rem;
     height: 35px;
@@ -87,8 +94,6 @@ body {
     gap: 70px;
     justify-content: space-between;
     padding-top: 75px;
-    position: relative;
-    z-index: 1;
 }
 
 .presentacion-texto {
@@ -96,42 +101,22 @@ body {
 }
 
 .etiqueta {
-    color: #efb74c;
+    color: #A8D8A0;
     font-size: .78rem;
     font-weight: bold;
     letter-spacing: 2px;
-    margin: 0 0 8px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
 
-h1,
-h2,
-h3,
-p {
-    margin-top: 0;
-}
-
-h1 {
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #106c65;
-    font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-
 .presentacion-texto > p:not(.etiqueta) {
-    color: #e4fffa;
+    color: #eaf6e8;
     font-size: 1.08rem;
     margin-bottom: 30px;
-    max-width: 560px;
 }
 
-.boton {
+.boton,
+.butHead {
     border-radius: 5px;
     display: inline-block;
     font-weight: bold;
@@ -140,63 +125,40 @@ h2 {
 }
 
 .boton-claro {
-    border: 1px solid rgba(255, 255, 255, .7);
+    border: 1px solid #A8D8A0;
     color: white;
 }
 
-.boton-principal {
-    background-color: #efb74c;
-    color: #29433e;
+.boton-principal,
+.butHead {
+    background-color: #1E6FD9;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
-.boton:hover {
-    opacity: .85;
+.boton:hover,
+.butHead:hover {
+    background-color: #1E9B6E;
 }
 
 .tarjeta-salud {
-    background-color: rgba(255, 255, 255, .16);
-    border: 1px solid rgba(255, 255, 255, .35);
-    border-radius: 12px;
+    background-color: rgba(168, 216, 160, .18);
+    border: 1px solid #A8D8A0;
+    border-radius: 10px;
     max-width: 265px;
     padding: 30px;
     text-align: center;
 }
 
-.tarjeta-salud strong {
-    display: block;
-    font-size: 1.15rem;
-    margin: 10px 0;
-}
-
-.tarjeta-salud p {
-    color: #e4fffa;
-    margin-bottom: 0;
-}
-
 .icono-grande {
-    color: #efb74c;
+    color: #A8D8A0;
     display: block;
     font-size: 3.5rem;
     line-height: 1;
 }
 
-.navegacion {
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(19, 70, 65, .12);
-    padding: 14px;
-    text-align: center;
-}
 
-.navegacion a {
-    color: #26736d;
-    font-weight: bold;
-    margin: 0 18px;
-    text-decoration: none;
-}
-
-.navegacion a:hover {
-    color: #e59e23;
-}
 
 .contenido {
     padding: 65px 20px 30px;
@@ -213,9 +175,11 @@ h2 {
     grid-template-columns: 1fr 1fr;
 }
 
-.nosotros > p {
-    color: #5a706b;
-    font-size: 1.05rem;
+.nosotros > p,
+.tarjeta-servicio p,
+.contacto p:not(.etiqueta),
+.datos-contacto p {
+    color: #52616f;
 }
 
 .encabezado-seccion {
@@ -231,35 +195,40 @@ h2 {
 
 .tarjeta-servicio {
     background-color: white;
-    border: 1px solid #d8ece8;
+    border: 1px solid #A8D8A0;
     border-radius: 8px;
     padding: 28px;
-    transition: transform .2s, box-shadow .2s;
-}
-
-.tarjeta-servicio:hover {
-    box-shadow: 0 8px 18px rgba(19, 90, 82, .12);
-    transform: translateY(-4px);
 }
 
 .icono {
-    color: #e6a52f;
+    color: #5CB85C;
     font-size: 2rem;
 }
 
 .tarjeta-servicio h3 {
-    color: #176f68;
+    color: #1A2C6B;
     margin: 10px 0 8px;
 }
 
 .tarjeta-servicio p {
-    color: #647b76;
     margin-bottom: 0;
+}
+
+.peso-ideal {
+    align-items: center;
+    background-color: #A8D8A0;
+    border-radius: 10px;
+    display: flex;
+    gap: 35px;
+    justify-content: space-between;
+    margin: 0 auto 65px;
+    max-width: 1100px;
+    padding: 32px 40px;
 }
 
 .contacto {
     align-items: center;
-    background-color: #e3f5f1;
+    background-color: #e8f4e6;
     border-radius: 10px;
     display: flex;
     gap: 50px;
@@ -268,112 +237,59 @@ h2 {
     padding: 35px 45px;
 }
 
-.contacto h2 {
-    margin-bottom: 8px;
-}
-
-.contacto p:not(.etiqueta),
-.datos-contacto p {
-    color: #59736e;
-    margin-bottom: 5px;
-}
-
 .datos-contacto {
     min-width: 310px;
 }
 
 footer {
-    background-color: #145c57;
-    color: #d7f5ef;
+    background-color: #1A2C6B;
+    color: #A8D8A0;
     padding: 18px;
     text-align: center;
 }
 
-footer p {
+.hder {
+    align-items: center;
+    background-color: #1A2C6B;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 30px;
+    max-width: 800px;
+    padding: 20px 25px;
+}
+
+.hder h2 {
+    color: #A8D8A0;
     margin-bottom: 0;
-}
-
-@media (max-width: 700px) {
-    .encabezado {
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-    .presentacion,
-    .nosotros,
-    .contacto {
-        align-items: stretch;
-        display: flex;
-        flex-direction: column;
-        gap: 28px;
-    }
-
-    .presentacion {
-        padding-top: 55px;
-    }
-
-    .tarjeta-salud {
-        max-width: none;
-    }
-
-    .navegacion a {
-        margin: 0 6px;
-    }
-
-    .tarjetas-servicios {
-        grid-template-columns: 1fr;
-    }
-
-    .contacto {
-        padding: 30px 25px;
-    }
-
-    .datos-contacto {
-        min-width: 0;
-    }
-}
-
-input, select {
-    border-radius: 11px;
-    width: 95%;
-    padding: 10px 15px;
-    border: 2px solid #106c65;
-    
 }
 
 .formulario {
     display: flex;
     flex-direction: column;
     gap: 8px;
-}
-.butHead {
-    background-color: #106c65;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.resultado {
-    display: none;
-    margin-top: 10px;
-    padding: 12px;
-    background-color: #eef1ff;
-    border-radius: 5px;
-    line-height: 1.6;
-}
-.resultado.mostrar {
-    display: block;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
-.hder {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+input,
+select {
+    background-color: white;
+    border: 2px solid #5CB85C;
+    border-radius: 7px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.resultado {
+    background-color: #edf7eb;
+    border-radius: 5px;
+    display: none;
+    line-height: 1.6;
+    margin-top: 10px;
+    padding: 12px;
+}
+
+.resultado.mostrar {
+    display: block;
 }
