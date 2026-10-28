@@ -332,3 +332,48 @@ footer p {
         min-width: 0;
     }
 }
+
+input, select {
+    border-radius: 11px;
+    width: 95%;
+    padding: 10px 15px;
+    border: 2px solid #106c65;
+    
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.butHead {
+    background-color: #106c65;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.resultado {
+    display: none;
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #eef1ff;
+    border-radius: 5px;
+    line-height: 1.6;
+}
+.resultado.mostrar {
+    display: block;
+}
+
+.hder {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
