@@ -182,6 +182,32 @@ h2 {
     color: #52616f;
 }
 
+.mision-vision {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 25px;
+}
+
+.tarjeta-info {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(26, 44, 107, .08);
+    padding: 18px;
+}
+
+.tarjeta-info h3 {
+    color: #1A2C6B;
+    font-size: 1.05rem;
+    margin-bottom: 7px;
+}
+
+.tarjeta-info p {
+    color: #52616f;
+    font-size: .92rem;
+    margin-bottom: 0;
+}
+
 .encabezado-seccion {
     margin-bottom: 30px;
     text-align: center;
